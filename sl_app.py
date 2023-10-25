@@ -14,15 +14,17 @@ class SL_App:
 
         st.title("Secret Message Writer")
         st.markdown("## Information")
-        st.markdown("This page uses an alphabet of lower case + upper case + digits + space + newline. It gives you a few ways to create your code alphabet. If you choose to input a full code alphabet of your own, make sure you input all of lower case,  upper case, digits, space and newline. Note, this will take the first encryption method it finds a setting for, it can't read your mind :wink:")
+        st.markdown("This page uses an alphabet of lower case + upper case + digits + space. It gives you a few ways to create your code alphabet. If you choose to input a full code alphabet of your own, make sure you input all of lower case,  upper case, digits, space. Note, this will take the first cypher method it finds a setting for, it can't read your mind :wink:")
 
-        st.markdown("## Set up the encoding method.")
+        st.markdown("## Set up the cypher method.")
 
         index_value = st.text_input("Enter an offset value for the substitution:")
 
         phrase_value = st.text_input("Enter an alphabet scrambling phrase:")
 
         multi_index = st.text_input("Enter a multi-alphabet offset phrase (long phrases will be very hard to break):")
+
+        new_alphabet = st.text_input("enter your code alphabet (dont forget the space )")
 
         st.markdown("## Enter your message and encode/decode.")
 
@@ -65,8 +67,19 @@ class SL_App:
                 st.markdown("## New message created:")
                 st.text_area("Message:", height=500, value=coded_message)
 
+            elif len(new_alphabet.strip()) > 0:
+
+                self.code_it.create_coded_from_user_alphabet(new_alphabet)
+                coded_message = self.code_it.code_message(user_message,
+                                                          code_flag)
+
+                st.markdown("## New message created:")
+                st.text_area("Message:", height=500, value=coded_message)
+
+
 
 if __name__ == "__main__":
     app = SL_App(CodeIt())
     app.run()
 
+# frznjakylegisdpotbmqwxuvhcFRZNJAKYLEG ISDPOTBMQWXUVHC6807953142

@@ -5,29 +5,33 @@ class CodeIt:
     """Class to hold the alphabets and manage the encodings."""
 
     def __init__(self):
-        self.alphabet = string.ascii_letters + string.digits + " " + "\n"
+        self.alphabet = string.ascii_letters + string.digits + " " #+ "\n"
         self.coded_alphabet: str = ""
 
     def create_coded_from_shift(self, _shift_value: int) -> None:
         """Shift the alphabet by the index given."""
-        shifter = _shift_value % (len(self.alphabet) + 0)
-        # print(shifter, len(self.alphabet))
-        self.coded_alphabet = self.alphabet[shifter:] + \
-            self.alphabet[:shifter]
+
+        # Get the value to shift by
+
+        # Create the alphabet
 
     def create_coded_from_phrase(self, _phrase: str) -> None:
-        """Given a user-supplied phrase, create a coded alphabet.
-        Check we have only been given alphanumeric text."""
-        dedup_phrase = ""
-        for c in _phrase.strip():
-            if c in self.alphabet and c not in dedup_phrase:
-                dedup_phrase += c
+        """Given a user-supplied phrase, create a coded alphabet."""
 
-        full = dedup_phrase + self.alphabet
-        self.coded_alphabet = ""
-        for c in full:
-            if c not in self.coded_alphabet:
-                self.coded_alphabet += c
+        # Get just individual letters
+
+        # Create the full alphabet with no duplicates
+
+    def create_coded_from_user_alphabet(self, new_alphabet: str) -> None:
+
+        if len(self.alphabet) != len (new_alphabet):
+            return
+        for i, c in enumerate(new_alphabet):
+            if c in new_alphabet[i+1:]:
+                return
+        self.coded_alphabet = new_alphabet
+
+
 
     def code_message(self, _user_message: str, _code_flag: bool) -> str:
         if _code_flag:
