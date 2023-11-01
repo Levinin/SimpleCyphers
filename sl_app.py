@@ -26,6 +26,17 @@ class SL_App:
 
         new_alphabet = st.text_input("enter your code alphabet ( Needs upercase, lowercase and numbers and don't forget the space e.g. abc[SPACE]defghi...zABCD...Z1234...0)")
 
+
+        ##### SIDEBAR
+        st.sidebar.markdown("Instructions")
+        st.sidebar.markdown("If you have a scrambling phrase and an alphabet it will only use the scrambling phrase so remember to delete that when you want to use an alphabet :thumbsup:")
+        st.sidebar.markdown("The scrambling phrase can be anything from 'I' to the longest sentence in the world.")
+        st.sidebar.markdown("The app alphabet is 'a..zA..Z0..9[SPACE]' so make sure yours is really different to that.")
+        st.sidebar.markdown("If you want to decode something make sure the tickbox is not ticked otherwise it will recode it.")
+        st.sidebar.markdown("Remember no one can decode your message without the phrase or alphabet so please don't forget it!")
+        st.sidebar.markdown("Please note that we will be adding more to the webside so when there is something new please remember to check the instructions.")
+
+
         st.markdown("## Enter your message and encode/decode.")
 
         user_message = st.text_area("Enter your message:", height=500)
