@@ -28,7 +28,7 @@ class SL_App:
 
 
         ##### SIDEBAR
-        st.sidebar.markdown("Instructions")
+        st.sidebar.markdown("## Instructions")
         st.sidebar.markdown("If you have a scrambling phrase and an alphabet it will only use the scrambling phrase so remember to delete that when you want to use an alphabet :thumbsup:")
         st.sidebar.markdown("The scrambling phrase can be anything from 'I' to the longest sentence in the world.")
         st.sidebar.markdown("The app alphabet is 'a..zA..Z0..9[SPACE]' so make sure yours is really different to that.")
