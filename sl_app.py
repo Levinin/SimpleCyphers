@@ -14,17 +14,17 @@ class SL_App:
 
         st.title("Secret Message Writer")
         st.markdown("## Information")
-        st.markdown("This page uses an alphabet of lower case + upper case + digits + space. It gives you a few ways to create your code alphabet. If you choose to input a full code alphabet of your own, make sure you input all of lower case,  upper case, digits, space. Note, this will take the first cypher method it finds a setting for, it can't read your mind :wink:")
+        st.markdown("Click the boxes to enter your information. This page codes and decodes any message you would like it to. Dont forget to follow the instructions above the boxes. :wink: We hope you enjoy this website.")
 
         st.markdown("## Set up the cypher method.")
 
-        index_value = st.text_input("Enter an offset value for the substitution:")
+        # index_value = st.text_input("Enter an offset value for the substitution:")
 
-        phrase_value = st.text_input("Enter an alphabet scrambling phrase:")
+        # phrase_value = st.text_input("Enter an alphabet scrambling phrase:")
 
-        multi_index = st.text_input("Enter a multi-alphabet offset phrase (long phrases will be very hard to break):")
+        multi_index = st.text_input("enter a secret scrambling phrase (long phrases will be very hard to break):")
 
-        new_alphabet = st.text_input("enter your code alphabet (dont forget the space )")
+        new_alphabet = st.text_input("enter your code alphabet ( Needs upercase, lowercase and numbers and don't forget the space e.g. abc[SPACE]defghi...zABCD...Z1234...0)")
 
         st.markdown("## Enter your message and encode/decode.")
 
@@ -35,31 +35,32 @@ class SL_App:
         coded_message = ""
 
         if st.button("Code/Decode message"):
-            index_value = index_value.strip()
-            if len(index_value) > 0:
-                try:
-                    self.code_it.create_coded_from_shift(int(index_value))
+            #index_value = index_value.strip()
+            #if len(index_value) > 0:
+                #try:
+                    #self.code_it.create_coded_from_shift(int(index_value))
 
-                    coded_message = self.code_it.code_message(user_message,
-                                              code_flag)
+                    #coded_message = self.code_it.code_message(user_message,
+                                              #code_flag)
 
-                    st.markdown("## New message created:")
-                    #st.write(coded_message)
-                    st.text_area("Message:", height=500, value=coded_message)
-                except ValueError:
-                    st.write("Please enter a valid index number only!")
+                    #st.markdown("## New message created:")
+                    ##st.write(coded_message)
+                    #st.text_area("Message:", height=500, value=coded_message)
+                #except ValueError:
+                    #st.write("Please enter a valid index number only!")
 
-            elif len(phrase_value.strip()) > 0:
+            #elif len(phrase_value.strip()) > 0:
 
-                self.code_it.create_coded_from_phrase(phrase_value)
+                #self.code_it.create_coded_from_phrase(phrase_value)
 
-                coded_message = self.code_it.code_message(user_message,
-                                                          code_flag)
+                #coded_message = self.code_it.code_message(user_message,
+                                                          #code_flag)
 
-                st.markdown("## New message created:")
-                st.text_area("Message:", height=500, value=coded_message)
+                #st.markdown("## New message created:")
+                #st.text_area("Message:", height=500, value=coded_message)
 
-            elif len(multi_index.strip()) > 0:
+            #elif len(multi_index.strip()) > 0:
+            if len(multi_index.strip()) > 0:
 
                 coded_message = self.code_it.code_multi_index_message(
                     user_message, multi_index, code_flag)
