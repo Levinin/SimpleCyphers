@@ -30,6 +30,7 @@ class SL_App:
         ##### SIDEBAR
         st.sidebar.markdown("## Instructions")
         st.sidebar.markdown("If you have a scrambling phrase and an alphabet it will only use the scrambling phrase so remember to delete that when you want to use an alphabet :thumbsup:")
+        st.sidebar.markdown("For the scramble number make sure it is definitely only a number you are putting in, but it can be any number. Don't put 0 because that will just be the normal alphabet.")
         st.sidebar.markdown("The scrambling phrase can be anything from 'I' to the longest sentence in the world.")
         st.sidebar.markdown("The app alphabet is 'a..zA..Z0..9[SPACE]' so make sure yours is really different to that.")
         st.sidebar.markdown("If you want to decode something make sure the tickbox is not ticked otherwise it will recode it.")
