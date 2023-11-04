@@ -18,7 +18,7 @@ class SL_App:
 
         st.markdown("## Set up the cypher method.")
 
-        # index_value = st.text_input("Enter an offset value for the substitution:")
+        index_value = st.text_input("Enter an alphabet scrambling number (Make sure that you only type numbers in this box.)")
 
         # phrase_value = st.text_input("Enter an alphabet scrambling phrase:")
 
@@ -46,19 +46,19 @@ class SL_App:
         coded_message = ""
 
         if st.button("Code/Decode message"):
-            #index_value = index_value.strip()
-            #if len(index_value) > 0:
-                #try:
-                    #self.code_it.create_coded_from_shift(int(index_value))
+            index_value = index_value.strip()
+            if len(index_value) > 0:
+                try:
+                    self.code_it.create_coded_from_shift(int(index_value))
 
-                    #coded_message = self.code_it.code_message(user_message,
-                                              #code_flag)
+                    coded_message = self.code_it.code_message(user_message,
+                                              code_flag)
 
-                    #st.markdown("## New message created:")
-                    ##st.write(coded_message)
-                    #st.text_area("Message:", height=500, value=coded_message)
-                #except ValueError:
-                    #st.write("Please enter a valid index number only!")
+                    st.markdown("## New message created:")
+                    ###st.write(coded_message)
+                    st.text_area("Message:", height=500, value=coded_message)
+                except ValueError:
+                    st.write("Please enter a number only!")
 
             #elif len(phrase_value.strip()) > 0:
 
@@ -70,8 +70,8 @@ class SL_App:
                 #st.markdown("## New message created:")
                 #st.text_area("Message:", height=500, value=coded_message)
 
-            #elif len(multi_index.strip()) > 0:
-            if len(multi_index.strip()) > 0:
+            elif len(multi_index.strip()) > 0:
+            #if len(multi_index.strip()) > 0:
 
                 coded_message = self.code_it.code_multi_index_message(
                     user_message, multi_index, code_flag)
